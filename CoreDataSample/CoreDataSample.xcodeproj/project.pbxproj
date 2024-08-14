@@ -14,6 +14,8 @@
 		26982A512C6B3F96006A544F /* PersistentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26982A502C6B3F96006A544F /* PersistentStore.swift */; };
 		26982A542C6B3FDC006A544F /* StudentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26982A532C6B3FDC006A544F /* StudentViewModel.swift */; };
 		26982A5A2C6B41B3006A544F /* StudentManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 26982A582C6B41B3006A544F /* StudentManager.xcdatamodeld */; };
+		26B02CE72C6C9905001E9E4E /* StudentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B02CE62C6C9905001E9E4E /* StudentListView.swift */; };
+		26B02CE92C6C99A2001E9E4E /* AddStudentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B02CE82C6C99A2001E9E4E /* AddStudentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		26982A502C6B3F96006A544F /* PersistentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStore.swift; sourceTree = "<group>"; };
 		26982A532C6B3FDC006A544F /* StudentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewModel.swift; sourceTree = "<group>"; };
 		26982A592C6B41B3006A544F /* StudentManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudentManager.xcdatamodel; sourceTree = "<group>"; };
+		26B02CE62C6C9905001E9E4E /* StudentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListView.swift; sourceTree = "<group>"; };
+		26B02CE82C6C99A2001E9E4E /* AddStudentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,7 @@
 		26982A3B2C6B2E1E006A544F /* CoreDataSample */ = {
 			isa = PBXGroup;
 			children = (
+				26B02CE52C6C98F6001E9E4E /* Views */,
 				26982A522C6B3FCD006A544F /* ViewModels */,
 				26982A4C2C6B3EB5006A544F /* CoreData */,
 				26982A3C2C6B2E1E006A544F /* CoreDataSampleApp.swift */,
@@ -90,6 +95,15 @@
 				26982A532C6B3FDC006A544F /* StudentViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		26B02CE52C6C98F6001E9E4E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				26B02CE62C6C9905001E9E4E /* StudentListView.swift */,
+				26B02CE82C6C99A2001E9E4E /* AddStudentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +178,8 @@
 			files = (
 				26982A5A2C6B41B3006A544F /* StudentManager.xcdatamodeld in Sources */,
 				26982A542C6B3FDC006A544F /* StudentViewModel.swift in Sources */,
+				26B02CE92C6C99A2001E9E4E /* AddStudentView.swift in Sources */,
+				26B02CE72C6C9905001E9E4E /* StudentListView.swift in Sources */,
 				26982A3F2C6B2E1E006A544F /* ContentView.swift in Sources */,
 				26982A512C6B3F96006A544F /* PersistentStore.swift in Sources */,
 				26982A3D2C6B2E1E006A544F /* CoreDataSampleApp.swift in Sources */,

@@ -8,10 +8,7 @@
 import Foundation
 import CoreData
 
-class StudentViewModel : ObservableObject {
-    
-    
-    @Published var students : [Student] = []
+class StudentViewModel: ObservableObject {
     
     
     init(){
@@ -19,16 +16,44 @@ class StudentViewModel : ObservableObject {
     }
     
     
+    @Published var students: [Student] = []
+    
+    @Published var searchText = "" {
+        didSet {
+            filterStudentsByName()
+        }
+    }
+    
+    
     func fetchStudents() {
         
         let request = Student.fetchRequest()
         
-        do{
+        do {
             self.students = try container.context.fetch(request)
-        }catch {
+        } catch {
             print("error fetching: \(error)")
         }
         
+    }
+    
+    func filterStudentsByName() {
+        
+        guard !searchText.isEmpty else {
+            fetchStudents()
+            return
+        }
+        
+        let request = NSFetchRequest<Student>(entityName: "Student")
+        request.predicate = NSPredicate(format: "name CONTAINS %@", searchText)
+        
+        do {
+            self.students = try container.context.fetch(request)
+        } catch {
+            print("error fetching: \(error)")
+        }
+
+            
     }
     
     func saveStudent(name: String) {

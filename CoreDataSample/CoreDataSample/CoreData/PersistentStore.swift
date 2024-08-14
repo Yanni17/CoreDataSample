@@ -20,7 +20,7 @@ struct PersistentStore {
     
     init() {
         
-        container = NSPersistentContainer(name: "PersonManager")
+        container = NSPersistentContainer(name: "StudentManager")
         
         container.viewContext.automaticallyMergesChangesFromParent = true
         

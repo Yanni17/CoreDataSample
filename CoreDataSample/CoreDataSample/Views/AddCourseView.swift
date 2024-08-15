@@ -11,7 +11,7 @@ struct AddCourseView: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    @ObservedObject var viewModel: CourseViewModel
+    @ObservedObject var viewModel: SharedViewModel
     @State var courseName: String = ""
     
     var body: some View {
@@ -43,5 +43,5 @@ struct AddCourseView: View {
 }
 
 #Preview {
-    AddCourseView(viewModel: CourseViewModel())
+    AddCourseView(viewModel: SharedViewModel())
 }

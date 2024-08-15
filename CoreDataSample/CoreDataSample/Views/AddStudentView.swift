@@ -10,7 +10,9 @@ import SwiftUI
 struct AddStudentView: View {
     
     @State private var name = ""
-    @ObservedObject var viewModel : StudentViewModel
+    @State private var course: Course?
+    
+    @ObservedObject var viewModel : SharedViewModel
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -43,5 +45,5 @@ struct AddStudentView: View {
 }
 
 #Preview {
-    AddStudentView(viewModel: StudentViewModel())
+    AddStudentView(viewModel: SharedViewModel())
 }

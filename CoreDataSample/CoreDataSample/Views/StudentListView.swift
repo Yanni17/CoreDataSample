@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StudentListView: View {
     
-    @StateObject var viewModel = StudentViewModel()
+    @StateObject var viewModel = SharedViewModel()
     @State private var presentingSheet = false
     
     var body: some View {

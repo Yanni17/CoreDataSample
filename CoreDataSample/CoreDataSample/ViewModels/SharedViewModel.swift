@@ -8,16 +8,18 @@
 import Foundation
 import CoreData
 
-class StudentViewModel: ObservableObject {
+class SharedViewModel: ObservableObject {
     
     
     init(){
         fetchStudents()
+        fetchCourses()
     }
     
     
     @Published var students: [Student] = []
-    
+    @Published var courses: [Course] = []
+
     @Published var searchText = "" {
         didSet {
             filterStudentsByName()
@@ -37,6 +39,23 @@ class StudentViewModel: ObservableObject {
         
     }
     
+    func save(course name: String) {
+        let course = Course(context: container.context)
+        course.id = UUID()
+        course.name = name
+        
+        saveAndFetch()
+    }
+    
+    func fetchCourses() {
+        let request = Course.fetchRequest()
+        do {
+            courses = try container.context.fetch(request)
+        } catch {
+            print("error fetching: \(error)")
+        }
+    }
+
     func filterStudentsByName() {
         
         guard !searchText.isEmpty else {
@@ -88,6 +107,7 @@ class StudentViewModel: ObservableObject {
         
         container.save()
         fetchStudents()
+        fetchCourses()
         
     }
     

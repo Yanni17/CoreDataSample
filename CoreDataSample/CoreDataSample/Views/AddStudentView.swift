@@ -10,8 +10,9 @@ import SwiftUI
 struct AddStudentView: View {
     
     @State private var name = ""
-    @State private var course: Course?
-    
+    @State private var selection: Course?
+    @State private var isEditMode: EditMode = .active
+
     @ObservedObject var viewModel : SharedViewModel
     @Environment(\.dismiss) private var dismiss
 
@@ -21,6 +22,12 @@ struct AddStudentView: View {
                 Section("Personal Information"){
                     TextField("Name", text: $name)
                         .autocorrectionDisabled()
+                    Picker("Courses", selection: $selection) {
+                        ForEach(viewModel.courses) { course in
+                            Text(course.name ?? "").tag(course as Course?)
+                        }
+                    }
+                    .pickerStyle(.navigationLink)
                 }
                 Button{
                     viewModel.saveStudent(name: name)

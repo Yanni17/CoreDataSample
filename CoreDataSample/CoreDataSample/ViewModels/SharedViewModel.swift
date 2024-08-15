@@ -75,11 +75,15 @@ class SharedViewModel: ObservableObject {
             
     }
     
-    func saveStudent(name: String) {
+    func saveStudent(name: String, course: Course? = nil) {
         
         let student = Student(context: container.context)
         student.id = UUID()
         student.name = name
+        
+        if let course {
+            student.course = course
+        }
         
         saveAndFetch()
         

@@ -15,7 +15,7 @@ struct CoursesListView: View {
     var body: some View {
         NavigationStack {
             List(viewModel.courses, id: \.self) { course in
-                Text(course)
+                Text(course.name ?? "")
             }
             .navigationTitle("Courses")
             .toolbar {

@@ -9,9 +9,29 @@ import Foundation
 
 class CourseViewModel: ObservableObject {
     
-    @Published var courses = ["Math", "English", "Spanish"]
+    @Published var courses: [Course] = []
     
-    func save(course: String) {
+    func save(course name: String) {
+        let course = Course(context: container.context)
+        course.id = UUID()
+        course.name = name
         
+        saveAndFetch()
     }
+    
+    func fetchCourses() {
+        let request = Course.fetchRequest()
+        do {
+            courses = try container.context.fetch(request)
+        } catch {
+            print("error fetching: \(error)")
+        }
+    }
+    
+    private func saveAndFetch() {
+        container.save()
+        fetchCourses()
+    }
+    
+    private let container = PersistentStore.shared
 }

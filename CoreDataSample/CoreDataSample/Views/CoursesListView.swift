@@ -25,6 +25,7 @@ struct CoursesListView: View {
             }
             .sheet(isPresented: $presentingAddCourse) {
                 AddCourseView(viewModel: viewModel)
+                    .presentationDetents([.medium])
             }
         }
     }

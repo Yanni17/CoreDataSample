@@ -16,6 +16,7 @@
 		26B02CE72C6C9905001E9E4E /* StudentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B02CE62C6C9905001E9E4E /* StudentListView.swift */; };
 		26B02CE92C6C99A2001E9E4E /* AddStudentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B02CE82C6C99A2001E9E4E /* AddStudentView.swift */; };
 		82EB78502C6D6FAD00A17D25 /* EducationManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 82EB784E2C6D6FAD00A17D25 /* EducationManager.xcdatamodeld */; };
+		82EB78522C6DF25000A17D25 /* CoursesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EB78512C6DF25000A17D25 /* CoursesListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		26B02CE62C6C9905001E9E4E /* StudentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentListView.swift; sourceTree = "<group>"; };
 		26B02CE82C6C99A2001E9E4E /* AddStudentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudentView.swift; sourceTree = "<group>"; };
 		82EB784F2C6D6FAD00A17D25 /* StudentManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudentManager.xcdatamodel; sourceTree = "<group>"; };
+		82EB78512C6DF25000A17D25 /* CoursesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			children = (
 				26B02CE62C6C9905001E9E4E /* StudentListView.swift */,
 				26B02CE82C6C99A2001E9E4E /* AddStudentView.swift */,
+				82EB78512C6DF25000A17D25 /* CoursesListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				26982A542C6B3FDC006A544F /* StudentViewModel.swift in Sources */,
 				26B02CE92C6C99A2001E9E4E /* AddStudentView.swift in Sources */,
 				26B02CE72C6C9905001E9E4E /* StudentListView.swift in Sources */,
+				82EB78522C6DF25000A17D25 /* CoursesListView.swift in Sources */,
 				26982A3F2C6B2E1E006A544F /* ContentView.swift in Sources */,
 				26982A512C6B3F96006A544F /* PersistentStore.swift in Sources */,
 				26982A3D2C6B2E1E006A544F /* CoreDataSampleApp.swift in Sources */,

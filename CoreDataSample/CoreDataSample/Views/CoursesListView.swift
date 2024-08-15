@@ -9,13 +9,19 @@ import SwiftUI
 
 struct CoursesListView: View {
     
-    @StateObject var viewModel = SharedViewModel()
+    @ObservedObject var viewModel: SharedViewModel
     @State var presentingAddCourse = false
     
     var body: some View {
         NavigationStack {
             List(viewModel.courses, id: \.self) { course in
-                Text(course.name ?? "")
+                HStack {
+                    Text(course.name ?? "")
+                    Spacer()
+                    if let studentsCount = course.students?.count {
+                        Text("\(studentsCount)").foregroundStyle(.gray)
+                    }
+                }
             }
             .navigationTitle("Courses")
             .toolbar {
@@ -32,5 +38,5 @@ struct CoursesListView: View {
 }
 
 #Preview {
-    CoursesListView()
+    CoursesListView(viewModel: .init())
 }

@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var viewModel = SharedViewModel()
+    
     var body: some View {
         TabView {
-            StudentListView()
+            StudentListView(viewModel: viewModel)
                 .tabItem {
                     Label(
                         title: { Text("Students") },
                         icon: { Image(systemName: "studentdesk") }
                     )
                 }
-            CoursesListView()
+            CoursesListView(viewModel: viewModel)
                 .tabItem {
                     Label(
                         title: { Text("Courses") },

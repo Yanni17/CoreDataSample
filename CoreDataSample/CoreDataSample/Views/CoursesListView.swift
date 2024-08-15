@@ -8,14 +8,24 @@
 import SwiftUI
 
 struct CoursesListView: View {
-    let courses: [String] = ["Math", "English", "Spanish"]
+    
+    @StateObject var viewModel = CourseViewModel()
+    @State var presentingAddCourse = false
     
     var body: some View {
         NavigationStack {
-            List(courses, id: \.self) { course in
+            List(viewModel.courses, id: \.self) { course in
                 Text(course)
             }
             .navigationTitle("Courses")
+            .toolbar {
+                Button("Add course", systemImage: "plus") {
+                    presentingAddCourse.toggle()
+                }
+            }
+            .sheet(isPresented: $presentingAddCourse) {
+                AddCourseView(viewModel: viewModel)
+            }
         }
     }
 }
